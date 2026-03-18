@@ -1,4 +1,4 @@
-package types
+package cnc
 
 // CapabilityReport is sent by the agent; entirely untrusted by the central.
 type CapabilityReport struct {

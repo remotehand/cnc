@@ -1,4 +1,4 @@
-package types
+package cnc
 
 // RegisterRequest is sent by the agent on startup.
 // AgentID is empty on first registration; the central assigns a UUID.

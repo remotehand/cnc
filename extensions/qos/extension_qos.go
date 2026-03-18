@@ -12,16 +12,16 @@ type QoSHint struct {
 }
 
 // NewQoSExtension encodes a QoSHint as an Extension using the given Codec.
-func NewQoSExtension(hint QoSHint, c types.Codec) (types.Extension, error) {
+func NewQoSExtension(hint QoSHint, c cnc.Codec) (cnc.Extension, error) {
 	b, err := c.Marshal(hint)
 	if err != nil {
-		return types.Extension{}, err
+		return cnc.Extension{}, err
 	}
-	return types.Extension{ID: ExtensionQoS, Value: b}, nil
+	return cnc.Extension{ID: ExtensionQoS, Value: b}, nil
 }
 
 // QoSHintFromExtension decodes a QoSHint from an Extension using the given Codec.
-func QoSHintFromExtension(ext types.Extension, c types.Codec) (QoSHint, error) {
+func QoSHintFromExtension(ext cnc.Extension, c cnc.Codec) (QoSHint, error) {
 	var hint QoSHint
 	if err := c.Unmarshal(ext.Value, &hint); err != nil {
 		return QoSHint{}, err

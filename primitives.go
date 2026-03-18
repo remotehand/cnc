@@ -1,4 +1,4 @@
-package types
+package cnc
 
 type ProtocolVersion string
 

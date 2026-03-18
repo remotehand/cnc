@@ -1,4 +1,4 @@
-package types
+package cnc
 
 // Codec marshals and unmarshals extension values.
 type Codec interface {

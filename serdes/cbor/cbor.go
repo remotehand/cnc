@@ -2,7 +2,7 @@ package cbor
 
 import (
 	"github.com/fxamacker/cbor/v2"
-	types "github.com/remotehand/cnc"
+	"github.com/remotehand/cnc"
 )
 
 var (
@@ -22,10 +22,10 @@ func init() {
 	}
 }
 
-// Codec implements types.Codec using CBOR with canonical encoding.
+// Codec implements cnc.Codec using CBOR with canonical encoding.
 type Codec struct{}
 
-var _ types.Codec = Codec{}
+var _ cnc.Codec = Codec{}
 
 func (Codec) Marshal(v any) ([]byte, error)     { return enc.Marshal(v) }
 func (Codec) Unmarshal(data []byte, v any) error { return dec.Unmarshal(data, v) }

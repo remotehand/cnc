@@ -1,4 +1,4 @@
-package types
+package cnc
 
 // Well-known session template names. Agents may also advertise custom names.
 const (
